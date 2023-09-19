@@ -1,4 +1,14 @@
 ### Typescript中常用的关键字与工具类型，提高TS类型理解与类型编码能力
+##### decorators
+```javascript
+/**
+装饰器执行顺序：
+    参数装饰器
+    方法（访问符）装饰器
+    属性装饰器
+    类装饰器
+ */
+```
 
 ##### keywords
 ```javascript
@@ -18,9 +28,9 @@
 // ReturnType<Type> 获取函数返回值类型
 // Awaited<Type> 获取Promise的结果类型
 // Readonly<Type> Type设置为只读
-// Pick<Type> 获取Type中的选中的属性
+// Pick<Type, Members> 获取Type中的选中的属性
 // Require<Type> Type设置为必选
-// Omit<Type> 获取Type中忽略的属性
+// Omit<Type, Members> 获取Type中忽略的属性
 // Record<Keys, Type> 返回一个Keys为属性Type为值的对象类型
 // Partial<Type> Type设置为可选
 // Exclude<Type, Members> Type中排除Members类型

@@ -4,7 +4,7 @@ function get(url: string) {
 // typeof 获取一个值的类型
 type GetFunc = typeof get
 // Parameters<Type> 获取函数参数类型，返回一个元组
-type param = Parameters<GetFunc>
+type Param = Parameters<GetFunc>
 // ReturnType<Type> 获取函数返回值类型
 type Return = ReturnType<GetFunc>
 // Awaited<Type> 获取Promise的结果类型
@@ -19,10 +19,10 @@ type Options = Readonly<{
     url: string,
     data?: any
 }>
-// Pick<Type> 获取Type中的选中的属性
+// Pick<Type, Members> 获取Type中的选中的属性
 // Require<Type> Type设置为必选
 // let defaultOptions: Required<Pick<Options, 'method'>> = {method: 'GET'}
-// Omit<Type> 获取Type中忽略的属性
+// Omit<Type, Members> 获取Type中忽略的属性
 let defaultOptions: Required<Omit<Options, 'url' | 'data'>> = {method: 'GET'}
 function mergeOptions(options: Options) {
     // options.method = 'POST'
