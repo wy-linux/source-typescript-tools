@@ -63,4 +63,19 @@ type T0 = string | number | undefined | null
 // NonNullable<Type> Type排除null与undefined类型
 type T00 = NonNullable<T0>
 
+/**
+实现一个StringKeys，用于遍历一个对象中所有值为string类型的key
+*/
+const obj = {
+    a: 1,
+    b: '2',
+    c: '3',
+} as const;
 
+type ObjType = typeof obj;
+
+type StringKeys<T> = {
+    [K in keyof T]: T[K] extends string ? K : never;
+}[keyof T];
+
+type Result = StringKeys<ObjType>; 
